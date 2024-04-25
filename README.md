@@ -1,41 +1,29 @@
-# docker_python
+# Turtle Challenge
 
-This Dockerfile provides you a full Python 2/3 environment.
-Including pip, pip2, pip3, pyhton-tk.
+This is a judge service for SITCON Camp 2024. We have some problem based on turtle python package. 
 
-## Building the container
-
-First of all, you must download this repo and build the Docker image
+## How to build docker container and run
 ```
-cd $HOME
-git clone https://git.pixhub.fr/pixhub/docker_python
-docker build -y some-name docker_python
+docker build -t turtle_judge . # Build the docker
+docker images # verify the image
+docker run -it --rm turtle_judge # go to docker env
 ```
 
-## Running the container with interactive Display
+## How to use this it
+### Play with Turtle
+- All python script should be put in `src/`. You can play with Turtle screen, and see the result on your host machine. 
+### Implement your turtle algorithm
+- Complete `drawing()` function in `example_turtle_script.py`
+### Judge service
+1. Ak collected python script on web(Not yet)
+2. Transfer python script to my host machine.
+3. Run `./judge.sh <python_script.py> <output_png_filename>` at local. This judge will take your implement result png file in `./result` and compared to solution png file in './solution'. And it outputs the similarity percentage based on pixel.
 
-With TKinter and Turtle, you can build Apps in Python with interactive Window.
-In my case, i got a folder containing all my Python Scripts which I mount inside the container.
-If you want the container intercating with your Host's desktop just copy/paste the following :
-```
-docker run --rm -ti -v /tmp/.X11-unix:/tmp/.X11-unix \
-                    -v /your/python/files/path:/app \
-                    -e DISPLAY=$DISPLAY \
-                    -u python some-name /bin/bash
-```
+## TODO
+- Write a judge script in `./judge_service`. 
+- Think about problem and wirte the solution script in `./judge_service/solution_script` 
+- Put `./judge.sh` `./solution` `./solution_script` into `.gitignore` after finish development 
+- Implement png file similarity test in `./judge.sh`
 
-### Want to Test ?
-
-Now you're inside the container type the following :
-```
-python3
->>> from turtle import *
->>> forward(200)
-```
-
-As you can see, a window pop on your screen with what you typed just before.
-
-Enjoy !
-
-Best regards,
-pixhub.# turtle_challenge
+## Note
+- Check with judging web service with @AK
