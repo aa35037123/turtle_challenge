@@ -1,16 +1,8 @@
 import turtle as turtle
 import sys
 
-"""
-#################
-Start your algorithm from here !!
-#################
-"""
-def drawing():
-    t.right(90)
-    t.forward(100)
-    t.left(90)
-    t.backward(100)
+def drawing(pen):
+    ## TODO: Implement the drawing function
     return
 """
 #################
@@ -25,10 +17,14 @@ so we commented it
 #################
 """
 if __name__ == '__main__':
-    result_path = sys.argv[1]  # Accept output path as a command-line argument
+    result_path = 'result.ps'
     s = turtle.getscreen()
-    t = turtle.Turtle()
-    drawing()
+    pen = turtle.Turtle()
+    
+    
+    drawing(pen)
+    
+
     canvas = s.getcanvas()
     canvas.postscript(file=result_path)
-    # turtle.done() # Uncomment this line if you want to keep the turtle graphics window open
+    turtle.done() # Uncomment this line if you want to keep the turtle graphics window open

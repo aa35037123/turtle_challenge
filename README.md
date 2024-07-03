@@ -31,5 +31,7 @@ docker run -it --rm turtle_judge # go to docker env
     - 26 ~ 50: 3 points
     - 51 ~ 75: 4 points
     - 76 ~ 100: 5 points  
+- Rename current judge.sh to save_png.sh
+- Create another judge.sh, based on current judge.sh 
 ## Note
 - Check with judging web service with @AK

@@ -16,14 +16,14 @@ if [[ $1 != *.py ]]; then
 fi
 
 # Define the paths
-PS_FILE="./judge_service/result/$2.ps"
-OUTPUT_PNG="./judge_service/result/$2.png"
+PS_FILE="./result/$2.ps"
+OUTPUT_PNG="./result/$2.png"
 
 # Ensure the result directory exists
-mkdir -p result
+mkdir -p ./result
 
 # Run Python scripts
 python3 "$1" "$PS_FILE"
-python3 ./judge_service/convert_ps_to_png.py "$PS_FILE" "$OUTPUT_PNG"
-rm "$PS_FILE"
+python3 convert_ps_to_png.py "$PS_FILE" "$OUTPUT_PNG"
+# rm "$PS_FILE"
 echo "Generated PNG file at $OUTPUT_PNG"
