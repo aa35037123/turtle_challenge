@@ -9,6 +9,7 @@ python = "^3.10"
 Pillow-PIL = "^0.1dev"
 scikit-image = "^0.23.2"
 tk = "^0.1.0"
+matplotlib = "^3.9.1"
 
 [tool.poetry.dev-dependencies]
 

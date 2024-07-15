@@ -3,13 +3,13 @@ from turtle import Turtle, Screen
 screen = Screen()
 
 # 建立畫筆
-turtle = Turtle()
+pen = Turtle()
 
 # 移動方向
-# turtle.penup() # 不會在圖上留下痕跡
-turtle.goto(-50, 100)
-# turtle.pendown() # 會在圖上留下痕跡
-turtle.goto(200, 100)
+pen.penup() # 不會在圖上留下痕跡
+pen.goto(-50, 100)
+pen.pendown() # 會在圖上留下痕跡
+pen.goto(200, 100)
 
 # 保持畫布開啟
 screen.mainloop()
